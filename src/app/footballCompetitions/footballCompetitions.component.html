@@ -1,0 +1,20 @@
+<div class="layout-column align-items-center mt-50">
+  <section
+    class="layout-row align-items-center justify-content-center"
+    data-test-id="page-number-buttons"
+  >
+    <button
+      *ngFor="let page of totalPages"
+      (click)="loadDetailsByPage(page + 1)"
+    >
+      {{ page + 1 }}
+    </button>
+  </section>
+
+  <ul class="mt-50 styled" data-test-id="football-competitions">
+    <li class="slide-up-fade-in py-10" *ngFor="let comp of competitionDetails">
+      Competition {{ comp.name }} won by {{ comp.winner }} in year
+      {{ comp.year }}
+    </li>
+  </ul>
+</div>
